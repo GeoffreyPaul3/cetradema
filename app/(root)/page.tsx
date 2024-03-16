@@ -1,0 +1,70 @@
+import AboutUs from "@/components/shared/AboutUs";
+import Contact from "@/components/shared/Contact";
+import Services from "@/components/shared/Services";
+import Team from "@/components/shared/Team";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <>
+      <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
+        <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
+          <div className="flex flex-col justify-center gap-8">
+            <h1 className="h1-bold">
+              Centre for Transformative Development and Management
+            </h1>
+            <p className="p-regular-20 md:p-regular-24">
+              We empower organizations and communities to conquer poverty
+              through research, capacity building, and networking.
+            </p>
+            <Button size="lg" asChild className="button w-full sm:w-fit">
+              <Link href="#services">Learn More</Link>
+            </Button>
+          </div>
+
+          <Image
+            src="/assets/images/Hero.jpg"
+            alt="hero"
+            width={1000}
+            height={1000}
+            className="max-h-[70vh] object-contain rounded-xl object-center 2xl:max-h-[50vh]"
+          />
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="wrapper my-8 flex flex-col gap-8 md:gap-12"
+      >
+        <h2 className="h2-bold">About Us</h2>
+        <AboutUs />
+      </section>
+
+      <section
+        id="services"
+        className="wrapper my-8 flex flex-col gap-8 md:gap-12"
+      >
+        <h2 className="h2-bold">Services</h2>
+        <p className="p-regular-20 md:p-regular-24">
+          Here are the areas of expertise CETRADEMA offers:
+        </p>
+        <Services />
+      </section>
+
+      <section id="team" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
+        <h2 className="h2-bold">Our Team</h2>
+        <Team />
+      </section>
+
+      <section
+        id="contact"
+        className="wrapper my-8 flex flex-col gap-8 md:gap-12"
+      >
+        <h2 className="h2-bold">Contact Us</h2>
+        <Contact />
+      </section>
+    </>
+  );
+}
